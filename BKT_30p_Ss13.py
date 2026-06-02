@@ -1,13 +1,4 @@
-list_employees = [{
-    "id": 101,
-    "name": 'Nguyen Van A',
-    "salary": 10.0
-},
-                {
-    "id": 102,
-    "name": 'Le Thi B',
-    "salary": 15.5                
-                }]
+list_employees = []
 
 while True: 
     choice = input("""
@@ -24,7 +15,10 @@ while True:
         choice = int(choice)
         match choice:
             case 1:
-                id_employees = list_employees[len(list_employees) - 1]['id'] + 1
+                if list_employees == []:
+                    id_employees = 101
+                else:
+                    id_employees = list_employees[len(list_employees) - 1]['id'] + 1
                 while True:
                     name_input = input("Nhập tên nhân viên: ")
                     if name_input.strip() == "":
